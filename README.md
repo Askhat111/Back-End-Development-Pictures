@@ -1,11 +1,23 @@
-# Back-end Capstone: Pictures
+# Back-End-Development-Pictures
 
-This repository contains the full application source in `source.zip`, with its original directories, tests, templates and assets preserved. Extract with `python -m zipfile -e source.zip .` to inspect or run the source locally.
+Pictures Flask REST API — IBM Back-end Application Development Capstone Project.
 
-The root Dockerfile extracts this same source archive during the build. Build using `docker build -t capstone-pictures .`.
+Public repository: https://github.com/Askhat111/Back-End-Development-Pictures
 
-The implementation builds on the IBM Developer Skills Network course starter. Original license notices are preserved. CRUD, validation and error handling were completed for the capstone.
+Direct README URL: https://github.com/Askhat111/Back-End-Development-Pictures/blob/main/README.md
 
-Testing recorded locally: Pictures 11 supplied pytest tests passed; Songs 4 tests passed against mongomock (a test double, not a live MongoDB server); Django 4 functional tests passed. Cloud deployment evidence is tracked separately and is not claimed by these local test results.
+## Source and execution
 
-Configuration: Songs reads MONGODB_URI. Django reads SONGS_API_URL, PICTURES_API_URL, DJANGO_ALLOWED_HOSTS and DJANGO_SECRET_KEY. Do not commit credentials. No default administrator credentials are provided.
+Full application source, original directories, tests, templates and assets are in `source.zip`. Extract with `python -m zipfile -e source.zip .`, then install `requirements.txt`. The root Dockerfile extracts this source during the build. Original IBM Developer Skills Network starter attribution and license notices are preserved.
+
+## Verified results
+
+11 supplied PyTest tests passed in the IBM lab. Endpoints: /health, /count, /picture, /picture/<id>. Supports GET, POST, PUT and DELETE.
+
+Deployment: https://pictures.2gndqglho9ku.us-south.codeengine.appdomain.cloud
+
+Validation date: 2026-11-01. These are temporary Skills Network lab deployments and may expire with the lab session. Terminal outputs and browser screenshots are separate submission evidence.
+
+## Configuration
+
+Songs uses `MONGODB_URI` or `MONGODB_SERVICE` and `MONGODB_PORT`. Django uses `SONGS_API_URL`, `PICTURES_API_URL`, `DJANGO_ALLOWED_HOSTS`, `DJANGO_SECRET_KEY`, `DJANGO_CSRF_TRUSTED_ORIGINS` and `DJANGO_TRUST_PROXY_HEADERS`. Only enable proxy-header trust behind the trusted deployment ingress. Do not commit credentials.
